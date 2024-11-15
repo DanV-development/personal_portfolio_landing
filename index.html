@@ -4,6 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/main.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/davatron5000/Lettering.js/jquery.lettering.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     </head>
 
     <body>
@@ -26,11 +32,11 @@
         <main>
             <section id="hero">
                 <div class="hero__image" id="hero_left_image">
-                    <img class="sculpture-image" src="img/hero-section-left.png" alt="Left image of the sculpture">
+                    <img class="sculpture-image" id="left_hero_sculpture" src="img/hero-section-left.png" alt="Left image of the sculpture">
                     <img src="img/ellipse_left.png" id="left_hero_ellipse" alt="Left ellipse image">
                 </div>
                 <div class="hero__image" id="hero_right_image">
-                    <img class="sculpture-image" src="img/hero-section-right.png" alt="Right image of the sculpture">
+                    <img class="sculpture-image" id="right_hero_sculpture" src="img/hero-section-right.png" alt="Right image of the sculpture">
                     <img src="img/ellipse_right.png" id="right_hero_ellipse" alt="Right ellipse image">
                 </div>
                 <div class="hero__text">

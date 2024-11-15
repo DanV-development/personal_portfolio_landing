@@ -177,6 +177,16 @@ div.hero__text {
     color: #925FF0;
 }
 
+.hero__text h1 span {
+    display: inline-block;
+}
+
+.hero__text h1 span span {
+    display: inline-block;
+    transform: translateY(110%); /* Устанавливаем начальное положение за нижней границей */
+    opacity: 0;
+}
+
 a.hero__arrow-down {
     position: absolute;
     left: 50%;
@@ -291,7 +301,6 @@ span.skills__name {
     font-size: calc(var(--index) * 3.3);
     color: #FFFFFF;
 }
-
 
 /* -------------------  Footer section  ------------------- */
 
