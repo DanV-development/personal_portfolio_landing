@@ -1,0 +1,468 @@
+@font-face {
+    font-family: gotham-book-portfolio-landing;
+    src: url(../fonts/Gotham/Gotham-Book.otf);
+}
+
+@font-face {
+    font-family: gotham-black-portfolio-landing;
+    src: url(../fonts/Gotham/Gotham-Black.otf);
+}
+
+@font-face {
+    font-family: anton-regular-portfolio-landing;
+    src: url(../fonts/Anton-Regular.ttf);
+}
+
+:root {
+    --index: calc(1vh + 1vw);
+    --header-height: calc(var(--index) * 4.2);
+    --hero-height: calc(100vh - var(--header-height));
+    --skills-card-width: calc(var(--index) * 17.37);
+    --skills-card-height: calc(var(--index) * 8.48);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    background-color: #F4EFFD;
+    overflow-x: hidden;
+}
+
+
+hr {
+    background-color: #292929;
+    height: 1px;
+}
+
+h1 {
+    font-family: anton-regular-portfolio-landing;
+    font-size: calc(var(--index) * 2.23);
+}
+
+figure img {
+    width: calc(var(--index) * 2.3);
+}
+
+/* -------------------  Header section (navbar)  ------------------- */
+
+header {
+    width: 100vw;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+div.hero__text h1 span {
+    font-size: calc(var(--index) * 5);
+    line-height: calc(var(--index) * 5);
+}
+
+a.logo {
+    margin-left: calc(var(--index) * 2);
+    height: max-content;
+}
+
+a.logo img {
+    /* 136 x 28 */
+    width: calc(var(--index) * 4.4);
+}
+
+nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.nav-items {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+li.nav-item a {
+    text-decoration: none;
+    color: #292929;
+    font-family: gotham-book-portfolio-landing;
+    font-size: calc(var(--index) * 0.7);
+    position: relative;
+    cursor: pointer;
+}
+
+li.nav-item a::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #784DC7;
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+li.nav-item a:hover:after,
+li.nav-item a:focus:after {
+    width: 100%;
+}
+
+li.nav-item a:hover {
+    transition: all 0.1s ease-in-out;
+    color: #784DC7;
+}
+
+a.contact-me {
+    display: flex;
+    margin-right: calc(var(--index) * 2);
+    height: calc(var(--index) * 1.4);
+    width: calc(var(--index) * 4.65);
+    text-decoration: none;
+    font-family: gotham-book-portfolio-landing;
+    font-size: calc(var(--index) * 0.56);
+    color: #784DC7;
+    align-items: center;
+    justify-content: center;
+    background-color: #E9DFFC;
+    border-radius: 4px;
+}
+
+
+/* -------------------  Hero section  ------------------- */
+
+section#hero {
+    height: var(--hero-height);
+    display: flex;
+}
+
+div.hero__image {
+    max-height: var(--hero-height);
+    position: relative;
+    overflow: hidden;
+}
+
+img.sculpture-image {
+    width: calc(var(--index) * 16.9);
+}
+
+
+img#left_hero_ellipse, img#right_hero_ellipse {
+    position: absolute;
+    z-index: -1;
+    top: calc(var(--index) * 7);
+    width: calc(var(--index) * 9.14);
+}
+
+img#left_hero_ellipse {
+    left: 0;
+}
+
+img#right_hero_ellipse {
+    right: 0;
+}
+
+div#hero_right_image {
+    max-height: var(--hero-height);
+    margin-left: auto;
+}
+
+div.hero__text {
+    position: absolute;
+    font-family: anton-regular-portfolio-landing;
+    top: calc(50% - var(--header-height));
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: calc(var(--index) / 3);
+    color: #925FF0;
+}
+
+a.hero__arrow-down {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: calc(var(--index) * 30)
+}
+
+a.hero__arrow-down img {
+    width: calc(var(--index) * 5.49);
+}
+
+
+/* -------------------  Content section  ------------------- */
+
+div.content__page {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 calc(var(--index) * 3.5);
+    padding-top: calc(var(--index) * 2.1);
+}
+
+
+div.content__left-info, div.content__right-info {
+    width: calc(var(--index) * 22);
+}
+
+div.content__left-info h1 {
+    padding-top: calc(var(--index) * 8.2);
+}
+
+p.content__p {
+    padding-top: calc(var(--index) * 1.4);
+    color: #292929;
+    font-family: gotham-book-portfolio-landing;
+    font-size: calc(var(--index) / 1.8);
+}
+
+div.content__right-info {
+    margin-top: calc(var(--index) * 2.1);
+}
+
+div.about-me-images {
+    display: flex;
+}
+
+div.big-about-me-image img {
+    width: calc(var(--index) * 19.56);
+}
+
+div.small-about-me-image img {
+    width: calc(var(--index) * 8.13);
+}
+
+div.small-about-me-image {
+    position: absolute;
+    transform: translate(-50%, 150%);
+}
+
+div.content__my-history {
+    position: absolute;
+    transform: translate(calc((var(--index) * 8.13) / -2));
+}
+
+img#digital_flat_programmer{
+    width: calc(var(--index) * 20.841);
+}
+
+
+/* -------------------  Skills section  ------------------- */
+
+section#skills {
+    height: 100vh;
+}
+
+section#skills h1 {
+    text-align: center;
+    padding-top: calc(var(--index) * 2.78);
+}
+
+div.skills__gallery {
+    display: grid;
+    grid-template-columns: var(--skills-card-width) var(--skills-card-width) var(--skills-card-width);
+    grid-template-rows: var(--skills-card-height) var(--skills-card-height);
+    column-gap: calc(var(--index) / 1.9);
+    row-gap: calc(var(--index) / 1.4);
+    justify-content: center;
+    padding-top: calc(var(--index) * 3.13);
+}
+
+div.skills__card {
+    width: var(--skills-card-width);
+    height: var(--skills-card-height);
+    background-color: #E9DFFC;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span.skills_progress {
+    height: max-content;
+    font-family: gotham-black-portfolio-landing;
+    font-size: calc(var(--index) * 1.3);
+}
+
+span.skills__name {
+    height: max-content;
+    font-family: anton-regular-portfolio-landing;
+    font-size: calc(var(--index) * 3.3);
+    color: #FFFFFF;
+}
+
+
+/* -------------------  Footer section  ------------------- */
+
+footer {
+    height: calc(var(--index) * 4.516);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background-color: #292929;
+}
+
+div.footer__social {
+    display: flex;
+    justify-content: space-between;
+    gap: calc(var(--index) * 1.4);
+    margin-left: auto;
+    margin-right: calc(var(--index) * 3.475);
+}
+
+
+/* -------------------  IPhone SE  ------------------- */
+
+@media (max-width: 375px) {
+    :root {
+        --index: calc(0.7vw + 0.7vh);
+        --hero-height: calc(33vh - var(--header-height)) !important;
+    }
+
+    div.hero__text {
+        top: 15%;
+    }
+    div.hero__text h1 span {
+        font-size: calc(var(--index) * 3);
+        line-height: calc(var(--index) * 3);
+    }
+    a.hero__arrow-down {
+        top: calc(var(--index) * 25)
+    }
+
+    div.about-me-images {
+        justify-content: start !important;
+    }
+
+    div.small-about-me-image {
+        transform: translate(-50%, 150%) !important;
+    }
+
+    section#skills {
+        height: 45vh;
+    }
+
+    span.skills_progress {
+        font-size: calc(var(--index));
+    }
+    span.skills__name {
+        font-size: calc(var(--index) * 2.3);
+    }
+    div.skills__card {
+        width: calc(var(--skills-card-width) / 1.2);
+    }
+
+    a.footer__social-logo img {
+        width: 16px;
+    }
+}
+
+/* -------------------  Galaxy Z Fold 5  ------------------- */
+@media (max-width: 344px) {
+    section#content {
+        height: 45vh;
+    }
+    div.about-me-images {
+        justify-content: end !important;
+    }
+    div.small-about-me-image {
+        transform: translate(-200%, 150%) !important;
+    }
+    img#digital_flat_programmer {
+        width: calc(var(--index) * 15.841);
+    }
+}
+
+/* -------------------  Samsung Galaxy S8+  ------------------- */
+@media (max-width: 360px) {
+    :root {
+        --hero-height: calc(29vh - var(--header-height)) !important;
+    }
+}
+
+
+/* -------------------  Nest Hub  ------------------- */
+
+@media (max-width: 1024px) and (max-height: 600px) {
+    :root {
+        --index: calc(1vw + 0.7vh) !important;
+        --hero-height: calc(85vh - var(--header-height)) !important;
+    }
+    div.hero__text {
+        top: 20% !important;
+    }
+    a.hero__arrow-down {
+        top: calc(var(--index) * 20) !important;
+    }
+    section#skills {
+        height: 100vh !important;
+    }
+}
+
+/* -------------------  Nest Hub Max  ------------------- */
+
+@media (width: 1280px) and (height: 800px) {
+    :root {
+        --hero-height: calc(85vh - var(--header-height)) !important;
+    }
+}
+
+/* -------------------  Other devices  ------------------- */
+
+@media (max-width: 1200px) {
+
+    :root {
+        --index: calc(0.6vw + 0.6vh);
+        --hero-height: calc(31vh - var(--header-height));
+    }
+
+    div.hero__text {
+        top: 15%;
+    }
+    div.hero__text h1 span {
+        font-size: calc(var(--index) * 3);
+        line-height: calc(var(--index) * 3);
+    }
+    a.hero__arrow-down {
+        top: calc(var(--index) * 25)
+    }
+
+    div.about-me-images {
+        justify-content: end;
+    }
+
+    div.big-about-me-image img {
+        width: calc(var(--index) * 15.56);
+    }
+
+    div.small-about-me-image img {
+        width: calc(var(--index) * 6.13);
+    }
+
+    div.small-about-me-image {
+        transform: translate(-200%, 150%);
+    }
+
+    section#skills {
+        height: 45vh;
+    }
+
+    span.skills_progress {
+        font-size: calc(var(--index));
+    }
+    span.skills__name {
+        font-size: calc(var(--index) * 2.3);
+    }
+    div.skills__card {
+        width: calc(var(--skills-card-width) / 1.2);
+    }
+
+    a.footer__social-logo img {
+        width: 16px;
+    }
+    div.skills__gallery {
+        grid-template-columns: var(--skills-card-width) var(--skills-card-width);
+        grid-template-rows: var(--skills-card-height) var(--skills-card-height);
+    }
+}
