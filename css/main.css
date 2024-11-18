@@ -165,13 +165,9 @@ div.hero__text {
     position: relative;
     height: max-content;
     font-family: anton-regular-portfolio-landing;
-    /* top: calc(50% - var(--header-height)); */
     margin-left: calc(var(--index) * 6.7);
     margin-top: calc(var(--index) * 4);
-    /* margin-right: auto; */
 
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
     letter-spacing: calc(var(--index) / 3);
     color: #925FF0;
 }
@@ -283,10 +279,19 @@ div.skills__gallery {
     display: grid;
     grid-template-columns: var(--skills-card-width) var(--skills-card-width) var(--skills-card-width);
     grid-template-rows: var(--skills-card-height) var(--skills-card-height);
-    column-gap: calc(var(--index) / 1.9);
-    row-gap: calc(var(--index) / 1.4);
+    column-gap: calc(var(--index) / .4);
+    row-gap: calc(var(--index) / .4);
     justify-content: center;
     padding-top: calc(var(--index) * 3.13);
+}
+
+#skills_header {
+    overflow: hidden;
+}
+
+#skills_header span {
+    display: inline-block;
+    transform: translateY(200%);
 }
 
 div.skills__card {
@@ -300,6 +305,8 @@ div.skills__card {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 10px 10px 30px -28px rgba(0,0,0,0.75);
+
 }
 
 span.skills_progress {
@@ -343,14 +350,11 @@ div.footer__social {
     }
 
     div.hero__text {
-        top: 15%;
+        margin-top: calc(var(--index) * 14);
     }
     div.hero__text h1 span {
         font-size: calc(var(--index) * 3);
         line-height: calc(var(--index) * 3);
-    }
-    a.hero__arrow-down {
-        top: calc(var(--index) * 25)
     }
 
     div.about-me-images {
@@ -412,11 +416,14 @@ div.footer__social {
         --hero-height: calc(85vh - var(--header-height)) !important;
     }
     div.hero__text {
-        top: 20% !important;
+        margin-left: calc(var(--index) * 6.7);
+        margin-top: calc(var(--index) * 3) !important;
     }
-    a.hero__arrow-down {
-        top: calc(var(--index) * 20) !important;
+    div.hero__text h1 span {
+        font-size: calc(var(--index) * 8) !important;
+        line-height: calc(var(--index) * 8) !important;
     }
+
     section#skills {
         height: 100vh !important;
     }
@@ -428,26 +435,28 @@ div.footer__social {
     :root {
         --hero-height: calc(85vh - var(--header-height)) !important;
     }
+    div.hero__text h1 span {
+        font-size: calc(var(--index) * 4) !important;
+        line-height: calc(var(--index) * 4) !important;
+    }
 }
 
 /* -------------------  Other devices  ------------------- */
 
 @media (max-width: 1200px) {
-
     :root {
         --index: calc(0.6vw + 0.6vh);
         --hero-height: calc(31vh - var(--header-height));
     }
 
     div.hero__text {
-        top: 15%;
+        margin-top: calc(var(--index) * 14);
+        margin-left: auto !important;
+
     }
     div.hero__text h1 span {
-        font-size: calc(var(--index) * 3);
+        font-size: calc(var(--index) * 2.5);
         line-height: calc(var(--index) * 3);
-    }
-    a.hero__arrow-down {
-        top: calc(var(--index) * 25)
     }
 
     div.about-me-images {
