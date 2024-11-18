@@ -5,197 +5,203 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
 
-        <script src="js/main.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/davatron5000/Lettering.js/jquery.lettering.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/davatron5000/Lettering.js/jquery.lettering.js" defer></script>
+        <script src="libs/gsap/gsap.min.js" defer></script>
+        <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+        <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
 
+        <script src="js/main.js" defer></script>
     </head>
 
     <body>
-        <header>
-            <a href="#" class="logo">
-                <img src="img/black-logo.png" alt="Brand Logo">
-            </a>
-            <nav>
-                <ul class="nav-items">
-                    <li class="nav-item"><a href="#">Home</a></li>
-                    <li class="nav-item"><a href="#">About me</a></li>
-                    <li class="nav-item"><a href="#">Skills</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="contact-me">
-                Contact me
-            </a>
-        </header>
+        <div class="wrapper">
+            <div class="content">
+                <header>
+                    <a href="#" class="logo">
+                        <img src="img/black-logo.png" alt="Brand Logo">
+                    </a>
+                    <nav>
+                        <ul class="nav-items">
+                            <li class="nav-item"><a href="#">Home</a></li>
+                            <li class="nav-item"><a href="#">About me</a></li>
+                            <li class="nav-item"><a href="#">Skills</a></li>
+                        </ul>
+                    </nav>
+                    <a href="#" class="contact-me">
+                        Contact me
+                    </a>
+                </header>
 
-        <main>
-            <section id="hero">
-                <div class="hero__image" id="hero_left_image">
-                    <img class="sculpture-image" id="left_hero_sculpture" src="img/hero-section-left.png" alt="Left image of the sculpture">
-                    <img src="img/ellipse_left.png" id="left_hero_ellipse" alt="Left ellipse image">
-                </div>
-                <div class="hero__image" id="hero_right_image">
-                    <img class="sculpture-image" id="right_hero_sculpture" src="img/hero-section-right.png" alt="Right image of the sculpture">
-                    <img src="img/ellipse_right.png" id="right_hero_ellipse" alt="Right ellipse image">
-                </div>
-                <div class="hero__text">
-                    <h1>
-                        <span>PERSONAL</span>
-                        <span style="display: block;">LANDING</span>
-                    </h1>
-                </div>
-                <a href="#" class="hero__arrow-down">
-                    <img src="img/arrow-down.png" alt="Arrow down">
-                </a>
-            </section>
-            <hr>
-
-            <section id="content">
-                <div class="content__about-me">
-                    <div class="content__page">
-                        <div class="content__left-info">
-                            <h1>ANDREA MENDEZ</h1>
-                            <figure>
-                                <img src="img/line.png" alt="Line separator">
-                            </figure>
-                            <p class="content__p">
-                                Lorem ipsum dolor sit amet consectetur.
-                                Viverra accumsan imperdiet tincidunt nibh
-                                aliquam ornare. Viverra justo condimentum
-                                interdum faucibus ac auctor tristique. Nulla
-                                integer mattis diam nunc sed scelerisque ut
-                                etiam. Habitant feugiat in tristique
-                                pellentesque urna. Enim imperdiet purus
-                                faucibus ullamcorper vel id at. At dictumst
-                                arcu mattis porttitor massa bibendum ac.
-                                Urna vel consequat nulla a tellus consequat.
-                                Neque natoque enim sed nulla et dignissim
-                                pulvinar. Dictum risus ut aliquam neque iaculis
-                                id sit gravida ultrices.
-                            </p>
-                            <p class="content__p">
-                                Lorem ipsum dolor sit amet consectetur.
-                                Viverra accumsan imperdiet tincidunt nibh
-                                aliquam ornare. Viverra justo condimentum
-                                interdum faucibus ac auctor tristique. Nulla
-                                integer mattis diam nunc sed scelerisque ut
-                                etiam. Habitant feugiat in tristique
-                                pellentesque urna. Enim imperdiet purus
-                                faucibus ullamcorper vel id at. At dictumst
-                                arcu mattis porttitor massa bibendum ac.
-                                Urna vel consequat nulla a tellus consequat.
-                                Neque natoque enim sed nulla et dignissim
-                                pulvinar. Dictum risus ut aliquam neque iaculis
-                                id sit gravida ultrices.
-                            </p>
+                <main>
+                    <section id="hero">
+                        <div class="hero__image" id="hero_left_image">
+                            <img class="sculpture-image" id="left_hero_sculpture" src="img/hero-section-left.png" alt="Left image of the sculpture">
+                            <img src="img/ellipse_left.png" id="left_hero_ellipse" alt="Left ellipse image">
                         </div>
-                        <div class="content__right-info">
-                            <div class="about-me-images">
-                                <div class="big-about-me-image">
-                                    <img src="img/big-photo-1.png" alt="Big about me picture">
+                        <div data-speed="1.25" class="hero__text">
+                            <h1>
+                                <span>PERSONAL</span>
+                                <span style="display: block;">LANDING</span>
+                            </h1>
+                        </div>
+                        <div class="hero__image" id="hero_right_image">
+                            <img class="sculpture-image" id="right_hero_sculpture" src="img/hero-section-right.png" alt="Right image of the sculpture">
+                            <img src="img/ellipse_right.png" id="right_hero_ellipse" alt="Right ellipse image">
+                        </div>
+                        <a data-speed="1.25" href="#" class="hero__arrow-down">
+                            <img src="img/arrow-down.png" alt="Arrow down">
+                        </a>
+                    </section>
+                    <hr>
+
+                    <section id="content">
+                        <div class="content__about-me">
+                            <div class="content__page">
+                                <div class="content__left-info">
+                                    <h1>ANDREA MENDEZ</h1>
+                                    <figure>
+                                        <img src="img/line.png" alt="Line separator">
+                                    </figure>
+                                    <p class="content__p">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                        Viverra accumsan imperdiet tincidunt nibh
+                                        aliquam ornare. Viverra justo condimentum
+                                        interdum faucibus ac auctor tristique. Nulla
+                                        integer mattis diam nunc sed scelerisque ut
+                                        etiam. Habitant feugiat in tristique
+                                        pellentesque urna. Enim imperdiet purus
+                                        faucibus ullamcorper vel id at. At dictumst
+                                        arcu mattis porttitor massa bibendum ac.
+                                        Urna vel consequat nulla a tellus consequat.
+                                        Neque natoque enim sed nulla et dignissim
+                                        pulvinar. Dictum risus ut aliquam neque iaculis
+                                        id sit gravida ultrices.
+                                    </p>
+                                    <p class="content__p">
+                                        Lorem ipsum dolor sit amet consectetur.
+                                        Viverra accumsan imperdiet tincidunt nibh
+                                        aliquam ornare. Viverra justo condimentum
+                                        interdum faucibus ac auctor tristique. Nulla
+                                        integer mattis diam nunc sed scelerisque ut
+                                        etiam. Habitant feugiat in tristique
+                                        pellentesque urna. Enim imperdiet purus
+                                        faucibus ullamcorper vel id at. At dictumst
+                                        arcu mattis porttitor massa bibendum ac.
+                                        Urna vel consequat nulla a tellus consequat.
+                                        Neque natoque enim sed nulla et dignissim
+                                        pulvinar. Dictum risus ut aliquam neque iaculis
+                                        id sit gravida ultrices.
+                                    </p>
                                 </div>
-                                <div class="small-about-me-image">
-                                    <img src="img/small-photo-1.png" alt="Small about me picture">
+                                <div class="content__right-info">
+                                    <div class="about-me-images">
+                                        <div class="big-about-me-image">
+                                            <img src="img/big-photo-1.png" alt="Big about me picture">
+                                        </div>
+                                        <div class="small-about-me-image">
+                                            <img src="img/small-photo-1.png" alt="Small about me picture">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content__page">
+                                <div class="content__left-info">
+                                    <img id="digital_flat_programmer" src="img/rb_3690.png" alt="Digital programmer image">
+                                </div>
+                                <div class="content__right-info">
+                                    <div class="content__my-history">
+                                        <h1>MY HISTORY</h1>
+                                        <figure>
+                                            <img src="img/line.png" alt="Line separator">
+                                        </figure>
+                                        <p class="content__p">
+                                            Lorem ipsum dolor sit amet consectetur.
+                                            Viverra accumsan imperdiet tincidunt nibh
+                                            aliquam ornare. Viverra justo condimentum
+                                            interdum faucibus ac auctor tristique. Nulla
+                                            integer mattis diam nunc sed scelerisque ut
+                                            etiam. Habitant feugiat in tristique
+                                            pellentesque urna. Enim imperdiet purus
+                                            faucibus ullamcorper vel id at. At dictumst
+                                            arcu mattis porttitor massa bibendum ac.
+                                            Urna vel consequat nulla a tellus consequat.
+                                            Neque natoque enim sed nulla et dignissim
+                                            pulvinar. Dictum risus ut aliquam neque iaculis
+                                            id sit gravida ultrices.
+                                        </p>
+                                        <p class="content__p">
+                                            Lorem ipsum dolor sit amet consectetur.
+                                            Viverra accumsan imperdiet tincidunt nibh
+                                            aliquam ornare. Viverra justo condimentum
+                                            interdum faucibus ac auctor tristique. Nulla
+                                            integer mattis diam nunc sed scelerisque ut
+                                            etiam. Habitant feugiat in tristique
+                                            pellentesque urna. Enim imperdiet purus
+                                            faucibus ullamcorper vel id at. At dictumst
+                                            arcu mattis porttitor massa bibendum ac.
+                                            Urna vel consequat nulla a tellus consequat.
+                                            Neque natoque enim sed nulla et dignissim
+                                            pulvinar. Dictum risus ut aliquam neque iaculis
+                                            id sit gravida ultrices.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="content__page">
-                        <div class="content__left-info">
-                            <img id="digital_flat_programmer" src="img/rb_3690.png" alt="Digital programmer image">
-                        </div>
-                        <div class="content__right-info">
-                            <div class="content__my-history">
-                                <h1>MY HISTORY</h1>
-                                <figure>
-                                    <img src="img/line.png" alt="Line separator">
-                                </figure>
-                                <p class="content__p">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                    Viverra accumsan imperdiet tincidunt nibh
-                                    aliquam ornare. Viverra justo condimentum
-                                    interdum faucibus ac auctor tristique. Nulla
-                                    integer mattis diam nunc sed scelerisque ut
-                                    etiam. Habitant feugiat in tristique
-                                    pellentesque urna. Enim imperdiet purus
-                                    faucibus ullamcorper vel id at. At dictumst
-                                    arcu mattis porttitor massa bibendum ac.
-                                    Urna vel consequat nulla a tellus consequat.
-                                    Neque natoque enim sed nulla et dignissim
-                                    pulvinar. Dictum risus ut aliquam neque iaculis
-                                    id sit gravida ultrices.
-                                </p>
-                                <p class="content__p">
-                                    Lorem ipsum dolor sit amet consectetur.
-                                    Viverra accumsan imperdiet tincidunt nibh
-                                    aliquam ornare. Viverra justo condimentum
-                                    interdum faucibus ac auctor tristique. Nulla
-                                    integer mattis diam nunc sed scelerisque ut
-                                    etiam. Habitant feugiat in tristique
-                                    pellentesque urna. Enim imperdiet purus
-                                    faucibus ullamcorper vel id at. At dictumst
-                                    arcu mattis porttitor massa bibendum ac.
-                                    Urna vel consequat nulla a tellus consequat.
-                                    Neque natoque enim sed nulla et dignissim
-                                    pulvinar. Dictum risus ut aliquam neque iaculis
-                                    id sit gravida ultrices.
-                                </p>
+                    </section>
+                    <hr>
+                    <section id="skills">
+                        <h1>Skills</h1>
+
+                        <div class="skills__gallery">
+                            <div class="skills__card">
+                                <span class="skills_progress">100%</span>
+                                <span class="skills__name">PYTHON</span>
+                            </div>
+                            <div class="skills__card">
+                                <span class="skills_progress">87%</span>
+                                <span class="skills__name">JAVASCRIPT</span>
+                            </div>
+                            <div class="skills__card">
+                                <span class="skills_progress">100%</span>
+                                <span class="skills__name">HTML</span>
+                            </div>
+                            <div class="skills__card">
+                                <span class="skills_progress">100%</span>
+                                <span class="skills__name">CSS</span>
+                            </div>
+                            <div class="skills__card">
+                                <span class="skills_progress">73%</span>
+                                <span class="skills__name">C#</span>
+                            </div>
+                            <div class="skills__card">
+                                <span class="skills_progress">94%</span>
+                                <span class="skills__name">DOCKER</span>
                             </div>
                         </div>
+                    </section>
+                </main>
+                <footer>
+                    <a href="#" class="logo">
+                        <img src="img/white-logo.png" alt="Brand Logo">
+                    </a>
+                    <div class="footer__social">
+                        <a class="footer__social-logo" href="#">
+                            <img src="img/instagram.svg" alt="Instagram logo">
+                        </a>
+                        <a class="footer__social-logo" href="#">
+                            <img src="img/facebook.svg" alt="Facebook logo">
+                        </a>
+                        <a class="footer__social-logo" href="#">
+                            <img src="img/linkedin.svg" alt="Linkedin logo">
+                        </a>
+                        <a class="footer__social-logo" href="#">
+                            <img src="img/twitter.svg" alt="Twitter logo">
+                        </a>
                     </div>
-                </div>
-            </section>
-            <hr>
-            <section id="skills">
-                <h1>Skills</h1>
-
-                <div class="skills__gallery">
-                    <div class="skills__card">
-                        <span class="skills_progress">100%</span>
-                        <span class="skills__name">PYTHON</span>
-                    </div>
-                    <div class="skills__card">
-                        <span class="skills_progress">87%</span>
-                        <span class="skills__name">JAVASCRIPT</span>
-                    </div>
-                    <div class="skills__card">
-                        <span class="skills_progress">100%</span>
-                        <span class="skills__name">HTML</span>
-                    </div>
-                    <div class="skills__card">
-                        <span class="skills_progress">100%</span>
-                        <span class="skills__name">CSS</span>
-                    </div>
-                    <div class="skills__card">
-                        <span class="skills_progress">73%</span>
-                        <span class="skills__name">C#</span>
-                    </div>
-                    <div class="skills__card">
-                        <span class="skills_progress">94%</span>
-                        <span class="skills__name">DOCKER</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <a href="#" class="logo">
-                <img src="img/white-logo.png" alt="Brand Logo">
-            </a>
-            <div class="footer__social">
-                <a class="footer__social-logo" href="#">
-                    <img src="img/instagram.svg" alt="Instagram logo">
-                </a>
-                <a class="footer__social-logo" href="#">
-                    <img src="img/facebook.svg" alt="Facebook logo">
-                </a>
-                <a class="footer__social-logo" href="#">
-                    <img src="img/linkedin.svg" alt="Linkedin logo">
-                </a>
-                <a class="footer__social-logo" href="#">
-                    <img src="img/twitter.svg" alt="Twitter logo">
-                </a>
+                </footer>
             </div>
-        </footer>
+        </div>
     </body>
 </html>

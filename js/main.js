@@ -1,8 +1,21 @@
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+ScrollSmoother.create({
+    wrapper: ".wrapper",
+    content: ".content",
+    effects: true,
+});
+const leftSculpture = $('#left_hero_sculpture');
+const rightSculpture = $('#right_hero_sculpture');
+const leftEllipse = $('#left_hero_ellipse');
+const rightEllipse = $('#right_hero_ellipse');
+const arrowDown = $('.hero__arrow-down');
+
+const leftImage = $('#hero_left_image');
+const rightImage = $('#hero_right_image')
+
 $(document).ready(function() {
-    const leftSculpture = $('#left_hero_sculpture');
-    const rightSculpture = $('#right_hero_sculpture');
-    const leftEllipse = $('#left_hero_ellipse');
-    const rightEllipse = $('#right_hero_ellipse');
+
     $('.hero__text h1 span').lettering();
 
     gsap.timeline()
@@ -14,7 +27,19 @@ $(document).ready(function() {
             ease: 'back.out',
             stagger: 0.05
         }
-    );
+    )
+
+    gsap.fromTo(arrowDown,
+        {
+            opacity: 0
+        },
+        {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+            delay: 0.3,
+        }
+    )
 
     gsap.fromTo(
         leftSculpture,
@@ -26,10 +51,11 @@ $(document).ready(function() {
             opacity: 1,
             x: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
             delay: 0.3
         }
-    );
+    )
+
     gsap.fromTo(
         leftEllipse,
         {
@@ -40,7 +66,7 @@ $(document).ready(function() {
             opacity: 1,
             x: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
             delay: 0.1
         }
     );
@@ -54,7 +80,7 @@ $(document).ready(function() {
             opacity: 1,
             x: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
             delay: 0.3
         }
     );
@@ -66,8 +92,41 @@ $(document).ready(function() {
         {
             x: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
             delay: 0.1
         }
     );
 });
+
+gsap.fromTo(leftImage,
+    {
+        opacity: 1,
+        x: 0,
+    },
+    {
+        opacity: 0,
+        x: -100,
+        scrollTrigger: {
+            trigger: leftImage,
+            start: 'top',
+            end: 'bottom',
+            scrub: true,
+        }
+    }
+);
+gsap.fromTo(rightImage,
+    {
+        opacity: 1,
+        x: 0,
+    },
+    {
+        opacity: 0,
+        x: 100,
+        scrollTrigger: {
+            trigger: rightImage,
+            start: 'top',
+            end: 'bottom',
+            scrub: true,
+        }
+    }
+);

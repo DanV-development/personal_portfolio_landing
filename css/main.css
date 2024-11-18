@@ -33,12 +33,6 @@ body {
     overflow-x: hidden;
 }
 
-
-hr {
-    background-color: #292929;
-    height: 1px;
-}
-
 h1 {
     font-family: anton-regular-portfolio-landing;
     font-size: calc(var(--index) * 2.23);
@@ -168,11 +162,16 @@ div#hero_right_image {
 }
 
 div.hero__text {
-    position: absolute;
+    position: relative;
+    height: max-content;
     font-family: anton-regular-portfolio-landing;
-    top: calc(50% - var(--header-height));
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: calc(50% - var(--header-height)); */
+    margin-left: calc(var(--index) * 6.7);
+    margin-top: calc(var(--index) * 4);
+    /* margin-right: auto; */
+
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     letter-spacing: calc(var(--index) / 3);
     color: #925FF0;
 }
@@ -188,16 +187,30 @@ div.hero__text {
 }
 
 a.hero__arrow-down {
+    display: flex;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: calc(var(--index) * 30)
+    top: calc(var(--index) * 25);
+    width: 100%;
 }
 
 a.hero__arrow-down img {
-    width: calc(var(--index) * 5.49);
+    width: calc(var(--index) * 4.49);
+    margin-left: auto;
+    margin-right: auto;
+    animation: bounce 2s infinite;
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
 
 /* -------------------  Content section  ------------------- */
 
