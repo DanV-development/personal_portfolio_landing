@@ -9,10 +9,11 @@ const leftSculpture = $('#left_hero_sculpture');
 const rightSculpture = $('#right_hero_sculpture');
 const leftEllipse = $('#left_hero_ellipse');
 const rightEllipse = $('#right_hero_ellipse');
-const arrowDown = $('.hero__arrow-down');
+const arrowDown = document.querySelector('.hero__arrow-down');
 
 const leftImage = $('#hero_left_image');
 const rightImage = $('#hero_right_image');
+
 
 const leftPanel = gsap.utils.toArray('.content__left-info');
 const rightPanel = gsap.utils.toArray('.content__right-info');
@@ -193,5 +194,19 @@ if (ScrollTrigger.isTouch !== 1) {
         }
     );
 } else {
-    $('.hero__arrow-down').remove();
+    arrowDown.remove();
 }
+console.log(arrowDown)
+arrowDown.addEventListener("click", function() {
+    // Общая высота страницы за вычетом высоты видимой области
+    let documentHeight = (
+        document.documentElement.scrollHeight - window.innerHeight
+    );
+
+    let scrollAmount = documentHeight * 0.4;
+
+    window.scrollTo({
+        top: scrollAmount,
+        behavior: "smooth",
+    });
+})
