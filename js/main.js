@@ -196,7 +196,6 @@ if (ScrollTrigger.isTouch !== 1) {
 } else {
     arrowDown.remove();
 }
-console.log(arrowDown)
 arrowDown.addEventListener("click", function() {
     // Общая высота страницы за вычетом высоты видимой области
     let documentHeight = (
